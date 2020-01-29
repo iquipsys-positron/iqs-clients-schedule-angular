@@ -1,0 +1,83 @@
+<div class="pip-body p0" ng-if="$ctrl.objects.length > 0 || $ctrl.equipments.length > 0 " 
+	ng-class="{'iqs-assine': !($ctrl.type == 'empty' && ($ctrl.objects.length > 0 || $ctrl.equipments.length > 0))}">
+	<div class="layout-row iqs-body">
+		<md-list class="flex divider-right pip-ref-list p0">
+			<md-list-item class="pip-ref-list-item" ng-repeat="object in $ctrl.objects track by $index" 
+			ng-class="{'iqs-object-select': $ctrl.selectObjectIndex == $index  && $ctrl.objects.length > 0 && $ctrl.equipments.length > 0 }"
+				md-ink-ripple>
+				<div class="pip-pic tm0" ng-click="$ctrl.selectObject($index)">
+					<pip-avatar class="pip-face" pip-rebind="true" pip-id="object.id" pip-name="object.name"  
+						xxxng-click="$ctrl.avatarClick(object.id)">
+					</pip-avatar>
+				</div>
+				<div class="pip-content" ng-click="$ctrl.selectObject($index)">
+					<p class="text-body2 text-overflow flex">
+						{{object.name}}
+					</p>
+					<p class="color-secondary-text text-overflow">
+						{{object.description || $ctrl.typeCollection[object.type].title | translate}}
+					</p>
+				</div>
+
+				<md-button class="md-fab iqs-left-fab {{($ctrl.transaction.busy() || !$ctrl.accessConfig.addObject) ? 'disable-button' : '' }}" ng-disabled="$ctrl.transaction.busy() || !$ctrl.accessConfig.addObject" 
+					aria-label="add" ng-click="$ctrl.updateRoster()"
+					ng-if="$ctrl.selectObjectIndex == $index && $ctrl.objects.length > 0 && $ctrl.equipments.length > 0">
+					<md-icon md-svg-icon="icons:cross" ng-if="$ctrl.type == 'done'"></md-icon>
+					<md-icon md-svg-icon="icons:plus" ng-if="$ctrl.type == 'empty'"></md-icon>
+				</md-button>
+			</md-list-item>
+		</md-list>
+		<md-list class="flex pip-ref-list p0">
+			<md-list-item class="pip-ref-list-item lp24" ng-repeat="object in $ctrl.equipments track by $index" md-ink-ripple 
+			ng-class="{'iqs-object-select': $ctrl.selectEquipmentIndex == $index  && $ctrl.objects.length > 0 && $ctrl.equipments.length > 0 }">
+				<div class="pip-pic tm0" ng-click="$ctrl.selectEquipment($index)">
+					<pip-avatar class="pip-face" pip-rebind="true" pip-id="object.id" pip-name="object.name"  
+						xxng-click="$ctrl.avatarClick(object.id)">
+					</pip-avatar>
+				</div>
+				<div class="pip-content" ng-click="$ctrl.selectEquipment($index)">
+					<p class="text-body2 text-overflow flex">
+						{{object.name}}
+					</p>
+					<p class="color-secondary-text flex-fixed  text-overflow">
+						{{object.description || $ctrl.typeCollection[object.type].title | translate}}
+					</p>
+
+				</div>
+				<md-button class="md-fab iqs-right-fab" ng-disabled="$ctrl.transaction.busy() || !$ctrl.accessConfig.assignObject" 
+					aria-label="add" ng-click="$ctrl.updateRoster()"
+					ng-if="$ctrl.selectObjectIndex != $ctrl.selectEquipmentIndex && $ctrl.selectEquipmentIndex == $index && $ctrl.objects.length > 0 && $ctrl.equipments.length > 0 ">
+					<md-icon md-svg-icon="icons:plus"></md-icon>
+				</md-button>
+			</md-list-item>
+		</md-list>
+	</div>
+</div>
+<div class="pip-footer " style="height: 86px" ng-if="$ctrl.type == 'empty' && ($ctrl.objects.length > 0 || $ctrl.equipments.length > 0)">
+	<div class="pip-action-list w-stretch">
+		<md-button class="pip-action-list-item" ng-click="$ctrl.autoRoster()" 
+			ng-disabled="$ctrl.transaction.busy() || $ctrl.objects.length == 0 || $ctrl.equipments.length == 0 || !$ctrl.accessConfig.assignObject">
+			<md-icon class="pip-pic" md-svg-icon="icons:people-plus"></md-icon>
+			<div class="pip-title">{{::'AUTO' | translate }}</div>
+		</md-button>
+		<md-button class="pip-action-list-item" ng-click="$ctrl.updateRoster()" 
+			ng-disabled="$ctrl.transaction.busy() || $ctrl.objects.length == 0 || $ctrl.equipments.length == 0 || !$ctrl.accessConfig.assignObject">
+			<md-icon class="pip-pic" md-svg-icon="icons:person-plus"></md-icon>
+			<div class="pip-title">{{::'APPOINT' | translate}}</div>
+		</md-button>
+	</div>
+</div>
+
+<div ng-if="$ctrl.objects.length == 0 && $ctrl.equipments.length == 0 " class="pip-body layout-column iqs-assine layout-align-center-center flex">
+
+	<div class="pip-empty" ng-if="$ctrl.state() != 'progress' && ( !$ctrl.selectedRoster || $ctrl.countObjects == 0)">
+		<img src="images/empty/empty.svg" class="pip-pic">
+		<div class="pip-text" ng-if="$ctrl.type == 'empty'">
+			{{::'SCHEDULE_TYPE_EMPTY' | translate}}
+		</div>
+		<div class="pip-text" ng-if="$ctrl.type != 'empty'">
+			{{::'SCHEDULE_TYPE_DONE' | translate}}
+		</div>
+	</div>
+
+</div>

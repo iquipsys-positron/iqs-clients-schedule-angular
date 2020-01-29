@@ -1,0 +1,30 @@
+{
+    "name": "iqs-clients-schedule-angular",
+    "version": "1.0.0",
+    "author": "iQuipsys Inc. <www.iquipsys.com>",
+    "description": "Schedule client microapplication for iQuipsys Positron in Angular",
+    "contributors": [
+        {
+            "name": "Sergey Seroukhov",
+            "email": "seroukhov@gmail.com"
+        },
+        {
+            "name": "Anastas Fonotov",
+            "email": "anastasf@gmail.com"
+        },
+        {
+            "name": "Koshevierov Aleksandr",
+            "email": "iworb.ne@gmail.com"
+        }
+    ],
+    "keywords": [
+        "iquipsys",
+        "positron",
+        "schedule"
+    ],
+    "noAnalyze": true,
+    "license": "MIT",
+    "private": false,
+    "dependencies": {},
+    "devDependencies": {}
+}

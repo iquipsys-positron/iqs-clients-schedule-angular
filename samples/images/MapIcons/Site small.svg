@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.1 (43504) - http://www.bohemiancoding.com/sketch -->
+    <title>Organization small</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FFEE58" stop-opacity="0.5" offset="0%"></stop>
+            <stop stop-color="#FFEE58" offset="100%"></stop>
+        </linearGradient>
+        <path d="M21,34 C14.3600532,28.4362845 10,22.2989899 10,16 C10,10.7010101 14.7010101,6 21,6 C26.2989899,6 31,10.7010101 31,16 C31,22.2989899 26.8284336,28.3393978 21,34 Z M20.5,22 C23.5375661,22 26,19.5375661 26,16.5 C26,13.4624339 23.5375661,11 20.5,11 C17.4624339,11 15,13.4624339 15,16.5 C15,19.5375661 17.4624339,22 20.5,22 Z" id="path-2"></path>
+        <filter x="-14.3%" y="-10.7%" width="128.6%" height="121.4%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Export-symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Organization-small">
+            <path d="M21,34 C14.3600532,28.4362845 10,22.2989899 10,16 C10,10.7010101 14.7010101,6 21,6 C26.2989899,6 31,10.7010101 31,16 C31,22.2989899 26.8284336,28.3393978 21,34 Z M20.5,22 C23.5375661,22 26,19.5375661 26,16.5 C26,13.4624339 23.5375661,11 20.5,11 C17.4624339,11 15,13.4624339 15,16.5 C15,19.5375661 17.4624339,22 20.5,22 Z" id="Combined-Shape" fill="#FFFFFF"></path>
+            <g id="Combined-Shape">
+                <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
+                <path stroke-opacity="0.1" stroke="#000000" stroke-width="1" d="M20.9754062,33.3247853 C27.2202858,27.1779955 30.5,21.5212933 30.5,16 C30.5,10.9771525 26.0228475,6.5 21,6.5 C15.1299534,6.5 10.5,10.8350708 10.5,16 C10.5,21.6694679 14.1720169,27.5335179 20.9754062,33.3247853 Z M20.5,22.5 C17.1862915,22.5 14.5,19.8137085 14.5,16.5 C14.5,13.1862915 17.1862915,10.5 20.5,10.5 C23.8137085,10.5 26.5,13.1862915 26.5,16.5 C26.5,19.8137085 23.8137085,22.5 20.5,22.5 Z"></path>
+            </g>
+        </g>
+    </g>
+</svg>

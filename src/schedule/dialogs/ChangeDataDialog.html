@@ -1,0 +1,28 @@
+<md-dialog class="pip-dialog layout-column bp0 pip-scroll"  md-theme="{{$ctrl.theme}}">
+
+	<md-progress-linear md-mode="indeterminate" class="dialog-progress-linear" ng-show="$ctrl.transaction.busy()">
+	</md-progress-linear>
+	<div class="pip-header p16">
+		<div class="w-stretch">
+			<h3 class="m0 bm16 w-stretch">{{:: 'CHANGE_DATA_DIALOG_TITLE' | translate }}</h3>
+		</div>
+	</div>
+
+	<div class="pip-body">
+        <pip-time-autocomplete 
+			pip-time-label="'SHIFT_START'"
+			pip-change-callback="$ctrl.onDateChange" ng-disabled="false" pip-date-time="$ctrl.dateStart" pip-time-step="$ctrl.timeStep">
+		</pip-time-autocomplete>
+
+		<pip-time-autocomplete 
+			pip-time-label="'SHIFT_END'"
+			pip-change-callback="$ctrl.onDateChangeEnd" ng-disabled="false" pip-date-time="$ctrl.dateEnd" pip-time-step="$ctrl.timeStep">
+		</pip-time-autocomplete>
+	</div>
+
+	<div class="pip-footer ">
+		<div class="flex"></div>
+		<md-button class="md-accent" ng-click="$ctrl.cancel()">{{::'CANCEL' | translate}}</md-button>
+		<md-button class="md-accent" ng-click="$ctrl.close()">{{::'DIALOG_CHANGE_SET' | translate}}</md-button>
+	</div>
+</md-dialog>

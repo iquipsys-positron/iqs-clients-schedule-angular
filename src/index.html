@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html class="no-scroll">
+
+<head lang="en">
+	<meta charset="UTF-8">
+	<!-- <meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="-1"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>iQuipsys Positron</title>
+	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+	<script>
+		function loadScript(url, callback) {
+			var script = document.createElement("script")
+			script.type = "text/javascript";
+			if (script.readyState) {  //IE
+				script.onreadystatechange = function () {
+					if (script.readyState === "loaded" || script.readyState === "complete") {
+						script.onreadystatechange = null;
+						callback();
+					}
+				};
+			} else {  //Others
+				script.onload = function () {
+					callback();
+				};
+			}
+
+			script.src = url;
+			document.getElementsByTagName("head")[0].appendChild(script);
+		}
+
+		// call the function...
+		loadScript("https://cdnjs.cloudflare.com/ajax/libs/bowser/1.9.4/bowser.min.js", function () {
+			// unsupported browsers check
+			var isValidBrowser = !bowser.isUnsupportedBrowser({
+				chrome: '56',
+				edge: '12',
+				firefox: '47',
+				opera: '34',
+				safari: '600',
+				yandexbrowser: '17.10'
+			}, window.navigator.userAgent);
+			if (!isValidBrowser) {
+				window.location.href = 'unsupported.html';
+			}
+		});
+	</script>
+	<script>
+		(() => {
+			var totalElementsToTranslate = 1;
+
+			function waitForElements(count, callBack) {
+				window.setTimeout(function () {
+					var elements = document.querySelectorAll('[translate]');
+					if (elements.length === count) {
+						callBack(elements);
+					} else {
+						waitForElements(count, callBack);
+					}
+				}, 500);
+			}
+
+			var translations = {
+				ru: {
+					'APPLICATION_LOADING': 'Приложение загружается. <br>В зависимости от вашей скорости интернета это может занять до нескольких минут.'
+				}
+			};
+			var userLang = navigator.language || navigator.userLanguage;
+			if (/ru/.test(userLang)) {
+				waitForElements(totalElementsToTranslate, function (elements) {
+					for (var i = 0; i < totalElementsToTranslate; i++) {
+						var element = elements[i];
+						var attr = element.attributes.translate.value;
+						if (translations.ru.hasOwnProperty(attr)) {
+							element.innerHTML = translations.ru[attr];
+						}
+					}
+				});
+			}
+		})();
+	</script>
+
+	<link rel="stylesheet" href="pip-webui-lib.min.css" />
+	<link rel="stylesheet" href="pip-webui-lib-optional.min.css" />
+	<link rel="stylesheet" href="pip-webui.min.css" />
+	<link rel="stylesheet" href="pip-suite.min.css" />
+	<link rel="stylesheet" href="iqs-client-shell.min.css" />
+	<link rel="stylesheet" href="pip-admin-system.min.css" />
+	<link rel="stylesheet" href="iqs-client-schedule-app.min.css" />
+	<style>
+		.loader {
+			margin: 0 0 2em;
+			height: 100px;
+			width: 20%;
+			text-align: center;
+			padding: 1em;
+			margin: 0 auto 1em;
+			display: inline-block;
+			vertical-align: top;
+		}
+	</style>
+	<script>
+		// hak for ie
+		if (!String.prototype.startsWith) {
+			String.prototype.startsWith = function (searchString, position) {
+				position = position || 0;
+				return this.indexOf(searchString, position) === position;
+			};
+		}
+	</script>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+
+</head>
+
+<body ng-app="iqsPositronScheduleApp" ng-controller="iqsPositronScheduleAppController  as mainCtrl" class="layout-column iqs-main"
+      ng-class="{'pip-windows': mainCtrl.isChrome}">
+
+	<iqs-client-shell>
+		<div class="layout-column flex layout-align-center-center" style="width: 100%; height: 100%; background-color: #eeeeee;">
+			<div style="padding: 16px; text-align: center;" translate="APPLICATION_LOADING">
+				Application is loading. <br>Depending on your connection speed it might take a few minutes.
+			</div>
+			<div class="loader">
+				<img src="images/pre-loading.svg">
+			</div>
+		</div>
+	</iqs-client-shell>
+
+	<script src="https://maps.googleapis.com/maps/api/js?libraries=geometry,drawing&sensor=true&key=AIzaSyBg6cm-FDBFPWzRcn39AuSHGQSrdtVIjEo"></script>
+	<script src="https://www.google.com/jsapi"></script>
+	<script src="pip-webui-lib.min.js"></script>
+	<script src="pip-webui-lib-optional.min.js"></script>
+	<script src="pip-webui.min.js"></script>
+	<script src="pip-suite.min.js"></script>
+
+	<script src="iqs-client-shell.min.js"></script>
+	<script src="pip-admin-system.min.js"></script>
+
+	<script src="iqs-client-schedule-app.min.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<div class="pip-main-menu" ng-class="{'pip-single-content': $ctrl.details}">
+	<div class="pip-menu">
+		<div class="layout-row divider-bottom iqs-schedule-nav">
+			<div class="lp16 lm4 rp24 text-subhead1">
+				<span>{{::'SCHEDULE_WEEK' | translate}}</span>
+				<span>
+					<md-datepicker md-hide-icons="calendar" ng-class="{'iqs-active-date color-accent': $ctrl.openDatePicker}" class="text-caption rm0 tm4 iqs-week"
+						ng-model="$ctrl.dateLocal" ng-change="$ctrl.onCalendarDateChange()" md-is-open="$ctrl.openDatePicker">
+					</md-datepicker>
+				</span>
+			</div>
+			<div class="flex"></div>
+			<div class="layout-row layout-align-center-center">
+				<md-button class="md-icon-button m0" ng-click="$ctrl.back()" ng-disabled="$ctrl.transaction.busy()" 
+				aria-label="current user" tabindex="-1">
+					<md-icon md-svg-icon="iqs:rev"></md-icon>
+				</md-button>
+				<md-button class="md-icon-button flex-fixed m0" ng-disabled="$ctrl.transaction.busy()" 
+				aria-label="current user" tabindex="-1" ng-click="$ctrl.current()">
+					<md-icon md-svg-icon="icons:date"></md-icon>
+				</md-button>
+				<md-button class="md-icon-button flex-fixed m0" ng-disabled="$ctrl.transaction.busy()" 
+				aria-label="current user" tabindex="-1" ng-click="$ctrl.next()">
+					<md-icon md-svg-icon="iqs:fwd"></md-icon>
+				</md-button>
+			</div>
+		</div>
+		<div ng-show="$ctrl.error" class="pip-page-errors">
+			<span class="pip-error-text color-error flex"> {{$ctrl.error}}</span>
+			<md-icon md-svg-icon="icons:warn-circle" class="color-error"></md-icon>
+		</div>
+		<div class="pip-list-container iqs-menu-empty tm0" ng-if="!$ctrl.isLoaded"></div>
+		<div class="pip-list-container pip-scroll" style="height: calc( 100% - 56px); overflow-x: hidden;" ng-if="$ctrl.isLoaded">
+			<md-list class="pip-ref-list tp0 iqs-schedule-list"
+				pip-selected="$ctrl.selectedIndex()"
+				pip-select="$ctrl.selectItem($event.index)">
+				<div ng-repeat="(key, section) in $ctrl.sections track by $index" class="divider-bottom" ng-if="section.shifts.length > 1">
+					<div class="lp16 lm4 rp24 ">
+						<div class="pip-content">
+							<p class="text-body color-secondary-text text-overflow flex">
+								{{ section.name | formatLongDayOfWeek }}, {{ section.name | formatLongDate}}
+							</p>
+						</div>
+					</div>
+					<md-list-item class="pip-ref-list-item pip-selectable pointer" 
+						ng-class="{'selected': $ctrl.selectedIndex() == key*$ctrl.sections[0].shifts.length + $index && $ctrl.edit !='add' }"
+						md-ink-ripple ng-repeat="shift in section.shifts track by $index">
+
+						<div class="pip-content">
+							<div class="layout-row">
+								<p class="text-body2 text-overflow flex">
+									{{ shift.name | translate}}
+								</p>
+								<div class="color-secondary-text flex-fixed" ng-if="shift.name == 'Full day'">
+									24 {{ 'SCHEDULE_HOUR' | translate }}
+								</div>
+								<div class="color-secondary-text flex-fixed" ng-if="shift.name != 'Full day'">
+									<span> {{ shift.startDate | formatShortTime }} </span>
+									<span> - </span>
+									<span> {{ shift.endDate | formatShortTime }} </span>
+								</div>
+							</div>
+						</div>
+					</md-list-item>
+				</div>
+
+				<div ng-repeat="(key, section) in $ctrl.sections track by $index" class="divider-bottom" ng-if="section.shifts.length == 1">
+					<md-list-item class="pip-ref-list-item pip-selectable "
+						ng-class="{'selected': $ctrl.selectedIndex() == $index && $ctrl.edit !='add' }"
+						md-ink-ripple>
+						<p class="text-body color-secondary-text text-overflow flex">
+							{{ section.name | formatLongDayOfWeek }}, {{ section.name | formatLongDate }}
+						</p>
+					</md-list-item>
+				</div>
+			</md-list>
+		</div>
+	   <md-fab-speed-dial md-direction="up" pip-fab-tooltip-visibility="opened" pip-fab-show-tooltip="showTooltip" md-open="opened"
+			style="z-index: 55" class="md-fling md-fab-bottom-right">
+
+			<md-fab-trigger>
+				<md-button aria-label="menu" class="md-fab md-accent">
+					<md-icon md-svg-icon="icons:dots"></md-icon>
+				</md-button>
+			</md-fab-trigger>
+
+			<md-fab-actions>
+				<md-button aria-label="COPY" ng-click="$ctrl.onCopy()" class="md-fab md-accent md-raised md-mini" ng-disabled="$ctrl.transaction.busy() || !$ctrl.accessConfig.addObject">
+					<md-tooltip md-visible="showTooltip" md-direction="left">
+						{{ ::'SCHEDULE_COPY' | translate }}
+					</md-tooltip>
+					<md-icon md-svg-icon="icons:unselect-all" aria-label="COPY"></md-icon>
+				</md-button>
+				<md-button aria-label="CLEAR" ng-click="$ctrl.onClear()" class="md-fab md-accent md-raised md-mini" ng-disabled="$ctrl.transaction.busy() || !$ctrl.accessConfig.addObject">
+					<md-tooltip md-visible="showTooltip" md-direction="left">
+						{{ ::'SCHEDULE_CLEAR' | translate }}
+					</md-tooltip>
+					<md-icon md-svg-icon="icons:trash" aria-label="CLEAR"></md-icon>
+				</md-button>
+			</md-fab-actions>
+		</md-fab-speed-dial>
+
+		<div class="pip-list-container bb-menu-empty" ng-if="$ctrl.transaction.busy()">
+		</div>
+	</div>
+	<div class="pip-content-container" ng-include="'schedule/panels/ScheduleDetails.html'">
+	</div>
+</div>

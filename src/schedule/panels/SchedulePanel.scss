@@ -1,0 +1,131 @@
+iqs-schedule-panel {
+    height: 100%;
+    width: 100%;
+    display: block;
+    position: relative;
+    .pip-main-menu {
+        height: 100%
+    }
+    .iqs-list-item {
+        width: 100%;
+    }
+    .iqs-before:before {
+        min-height: 0 !important;
+    }
+    .iqs-schedule-nav {
+        background: rgba(158, 158, 158, 0.2);
+    }
+    .iqs-roster-objects-list.pip-ref-list {
+        .pip-ref-list-item {
+            .pip-content {
+                width: calc(100% - 144px) !important;
+            }
+        }
+    }
+    .pip-content-container pip-document {
+        width: 100%!important;
+        height: 100%!important;
+        max-width: 100%!important;
+        max-height: 100%!important;
+    }
+    .iqs-schedule-nav {
+        span {
+            vertical-align: middle;
+        }
+        md-datepicker {
+            .md-datepicker-input-container {
+                border: 0;
+            }
+        }
+    }
+    .pip-menu {
+        .text-subhead1 {
+            padding-top: 18px;
+            padding-bottom: 14px;
+        }
+    }
+}
+
+.iqs-main {
+    iqs-schedule-panel {
+        .iqs-empty {
+            .pip-empty {
+                width: 400px;
+                .pip-pic {
+                    margin: 0 auto;
+                    padding-top: 24px;
+                    width: 250px !important;
+                    height: 250px !important;
+                    min-height: 250px !important;
+                }
+                .pip-actions {
+                    margin-top: 16px !important;
+                }
+                .text-title {
+                    padding: 16px
+                }
+                .text-subhead1 {
+                    padding: 16px
+                }
+            }
+        }
+    }
+}
+
+iqs-schedule-assigne {
+    display: block;
+    height: inherit;
+    position: relative;
+    overflow: auto;
+    md-list-item {
+        max-width: calc(100% - 16px) !important;
+    }
+    .pip-body {
+        min-height: calc(100% - 87px);
+        max-height: calc(100% - 87px);
+    }
+    .disable-button {
+        opacity: 0.38;
+    }
+    .pip-body.iqs-assine {
+        min-height: calc(100%);
+        max-height: calc(100%);
+    }
+    .iqs-body,
+    md-list {
+        min-height: 100%;
+    }
+    .iqs-left-fab {
+        position: absolute;
+        right: -20px;
+        width: 40px !important;
+        height: 40px !important;
+        margin: 0;
+        background: #fff !important;
+        md-icon {
+            color: rgba(0, 0, 0, .87) !important;
+        }
+    }
+    .iqs-right-fab {
+        position: absolute;
+        left: -20px;
+        width: 40px !important;
+        height: 40px !important;
+        margin: 0;
+        background: #fff !important;
+        md-icon {
+            color: rgba(0, 0, 0, .87) !important;
+        }
+    }
+}
+
+.pip-xs,
+.pip-sm {
+    .iqs-schedule-list {
+        md-list-item.pip-selectable.pip-ref-list-item.selected {
+            padding-left: 16px !important;
+            background-color: rgb(236, 236, 236);
+            border-left: 5px solid rgb(236, 236, 236) !important;
+        }
+    }
+}

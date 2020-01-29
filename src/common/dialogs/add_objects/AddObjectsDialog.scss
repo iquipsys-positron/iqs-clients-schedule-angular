@@ -1,0 +1,16 @@
+.iqs-add-objects-dialog {
+    .md-list-item-inner {
+        display: -webkit-box;
+    }
+    .pip-ref-list {
+        .pip-ref-list-item {
+            .pip-content {
+                max-width: calc(100% - 88px);
+            }
+        }
+    }
+}
+
+.iqs-object-select {
+    background-color: rgba(158, 158, 158, 0.2);
+}

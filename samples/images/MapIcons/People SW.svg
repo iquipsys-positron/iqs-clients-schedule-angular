@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.1 (43504) - http://www.bohemiancoding.com/sketch -->
+    <title>People SW</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M15,30 C6.716,30 0,23.284 0,15 C0,6.716 6.716,0 15,0 L30,0 L30,15 C30,23.284 23.284,30 15,30 Z" id="path-1"></path>
+        <filter x="-15.0%" y="-15.0%" width="130.0%" height="130.0%" filterUnits="objectBoundingBox" id="filter-2">
+            <feMorphology radius="0.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="0" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="50%" y1="3.38408801%" x2="50%" y2="100%" id="linearGradient-3">
+            <stop stop-color="#8B8B8B" stop-opacity="0.5" offset="0%"></stop>
+            <stop stop-color="#8B8B8B" offset="100%"></stop>
+        </linearGradient>
+        <path d="M13,26 C5.82053333,26 0,20.1794667 0,13 C0,5.82053333 5.82053333,0 13,0 C20.1794667,0 26,5.82053333 26,13 C26,20.1794667 20.1794667,26 13,26 Z" id="path-4"></path>
+    </defs>
+    <g id="Export-symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="People-SW">
+            <g id="Direction" transform="translate(20.000000, 20.000000) rotate(-180.000000) translate(-20.000000, -20.000000) translate(5.000000, 5.000000)">
+                <g id="Outer-circle">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                </g>
+                <path d="M15,28 C7.82053333,28 2,22.1794667 2,15 C2,7.82053333 7.82053333,2 15,2 C22.1794667,2 28,7.82053333 28,15 C28,22.1794667 22.1794667,28 15,28 Z" id="Symbol-background" fill="#FEFEFE" fill-rule="evenodd"></path>
+            </g>
+            <g id="People-symbol" transform="translate(5.000000, 5.000000)">
+                <g id="Symbol" transform="translate(2.000000, 2.000000)">
+                    <g id="Outer-circle">
+                        <use fill="url(#linearGradient-3)" fill-rule="evenodd" xlink:href="#path-4"></use>
+                        <path stroke-opacity="0.1" stroke="#000000" stroke-width="1" d="M13,25.5 C19.9033243,25.5 25.5,19.9033243 25.5,13 C25.5,6.09667571 19.9033243,0.5 13,0.5 C6.09667571,0.5 0.5,6.09667571 0.5,13 C0.5,19.9033243 6.09667571,25.5 13,25.5 Z"></path>
+                    </g>
+                    <g id="Person" transform="translate(9.000000, 4.000000)" fill="#FEFEFE">
+                        <path d="M8,7.38940953 L8,12.063809 C8,12.2715611 7.93197347,12.4403572 7.79591837,12.5702023 C7.60544122,12.7519854 7.41496694,12.8428756 7.2244898,12.8428756 L6.40816327,12.8428756 L6.40816327,17.517275 C6.40816327,17.6990581 6.32653143,17.8678542 6.16326531,18.0236683 C5.97278816,18.2054514 5.78231388,18.2963416 5.59183673,18.2963416 L2.40816327,18.2963416 C2.21768612,18.2963416 2.02721184,18.2054514 1.83673469,18.0236683 C1.70067959,17.8418852 1.63265306,17.6730891 1.63265306,17.517275 L1.63265306,12.8428756 L0.857142857,12.8428756 C0.585032653,12.8428756 0.394558367,12.7519854 0.285714286,12.5702023 C0.0952371429,12.4663262 0,12.2975301 0,12.063809 L0,7.38940953 C0,6.97390528 0.163263673,6.61034451 0.489795918,6.29871632 C0.816328163,5.98708814 1.19727673,5.83127638 1.63265306,5.83127638 L6.40816327,5.83127638 C6.81632857,5.83127638 7.18367184,5.98708814 7.51020408,6.29871632 C7.83673633,6.5843755 8,6.94793626 8,7.38940953 Z M6.85122113,2.72673301 C6.85122113,3.42789644 6.57911501,4.06412778 6.0348946,4.63544612 C5.49067419,5.18079545 4.8376195,5.45346603 4.07571093,5.45346603 C3.28659133,5.45346603 2.60632603,5.18079545 2.0348946,4.63544612 C1.51788521,4.09009679 1.2593844,3.45386545 1.2593844,2.72673301 C1.2593844,1.99960057 1.51788521,1.36336923 2.0348946,0.818019904 C2.60632603,0.272670575 3.28659133,0 4.07571093,0 C4.8376195,0 5.49067419,0.272670575 6.0348946,0.818019904 C6.57911501,1.38933825 6.85122113,2.02556959 6.85122113,2.72673301 Z" id="Icon"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

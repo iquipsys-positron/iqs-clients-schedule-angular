@@ -1,0 +1,211 @@
+<pip-document class="pip-scroll">
+
+	<md-button class="md-fab md-accent md-fab-bottom-right" ng-disabled="$ctrl.transaction.busy() || !$ctrl.accessConfig.addObject"
+	 aria-label="add" ng-if="($ctrl.assign == 'groups') && !(!$ctrl.selectedRoster || $ctrl.countObjects == 0) && $ctrl.typeObjectsCount > 0"
+	 ng-click="$ctrl.updateRoster($ctrl.selectedRoster)">
+		<md-icon md-svg-icon="icons:plus"></md-icon>
+	</md-button>
+
+	<md-progress-linear md-mode="indeterminate" style="position: absolute;" ng-show="$ctrl.transaction.busy()"></md-progress-linear>
+
+	<div class="pip-header bp0 rp16 lp16 tp16" ng-if="$ctrl.sections[$ctrl.selectSection].name">
+		<div style="width: 100%">
+			<div class="pip-ref-title layout-row bp16">
+				<div class="pip-content">
+					<p class="pip-title">
+						{{$ctrl.sections[$ctrl.selectSection].name | formatLongDayOfWeek }}, {{ $ctrl.sections[$ctrl.selectSection].name
+						| formatLongDate }}
+					</p>
+					<p class="pip-subtitle ">
+						<span class="color-secondary-text flex-fixed">{{$ctrl.sections[$ctrl.selectSection].shifts[$ctrl.selectRoster].name
+							| translate}}, </span>
+						<span class="color-secondary-text flex-fixed" ng-if="$ctrl.sections[$ctrl.selectSection].shifts[$ctrl.selectRoster].name == 'Full day'">
+							{{'24_HOURS' | translate}}
+						</span>
+						<span class="color-secondary-text flex-fixed" ng-if="$ctrl.sections[$ctrl.selectSection].shifts[$ctrl.selectRoster].name != 'Full day'">
+							<span ng-if="$ctrl.selectedRoster.start_time">{{ $ctrl.selectedRoster.start_time | formatShortTime}}</span>
+							<span ng-if="!$ctrl.selectedRoster.start_time">
+								{{$ctrl.sections[$ctrl.selectSection].shifts[$ctrl.selectRoster].startDate | formatShortTime}} </span>
+							<span> - </span>
+							<span ng-if="$ctrl.selectedRoster.end_time">{{ $ctrl.selectedRoster.end_time | formatShortTime}}</span>
+							<span ng-if="!$ctrl.selectedRoster.end_time">
+								{{$ctrl.sections[$ctrl.selectSection].shifts[$ctrl.selectRoster].endDate | formatShortTime}} </span>
+						</span>
+					</p>
+				</div>
+				<div class="flex"></div>
+				<div class="layout-row layout-align-center-center flex-fixed">
+					<md-button class="md-icon-button" ng-click="$ctrl.changeRoster()" ng-if="$ctrl.selectRoster != 0" aria-label="current user"
+					 ng-disabled="$ctrl.transaction.busy() || !$ctrl.accessConfig.editShift" tabindex="-1">
+						<md-icon md-svg-icon="icons:pen"></md-icon>
+					</md-button>
+					<md-button class="md-icon-button flex-fixed" aria-label="current user" tabindex="-1" ng-click="$ctrl.changeAssign()"
+					 ng-disabled="$ctrl.transaction.busy()" ng-if="$ctrl.selectedRoster && $ctrl.selectedRosterObjects.length > 0">
+						<md-icon md-svg-icon="icons:dashboard" ng-if="$ctrl.assign == 'groups'"></md-icon>
+						<md-icon md-svg-icon="icons:list" ng-if="$ctrl.assign == 'assign'"></md-icon>
+					</md-button>
+				</div>
+			</div>
+			<md-tabs md-dynamic-height md-selected="$ctrl.type" ng-disabled="$ctrl.transaction.busy()" ng-if="$ctrl.selectedRoster  && $ctrl.assign == 'groups' && $ctrl.selectedRosterObjects.length > 0">
+				<md-tab label="{{type.title | translate}}" id="{{type.id}}" ng-repeat="type in $ctrl.types track by $index"
+				 ng-click="$ctrl.selectTypeObject($index)"></md-tab>
+			</md-tabs>
+
+			<md-tabs md-dynamic-height md-selected="$ctrl.typeAssign" ng-disabled="$ctrl.transaction.busy()" ng-if="$ctrl.selectedRoster  && $ctrl.assign == 'assign'">
+				<md-tab label="{{type.title | translate}}" id="{{type.id}}" ng-repeat="type in $ctrl.typesAssign track by $index"
+				 ng-click="$ctrl.selectTypeAssignObject($index)"></md-tab>
+			</md-tabs>
+		</div>
+	</div>
+
+	<div class="pip-body p16  layout-column flex" ng-if="$ctrl.selectedRoster && $ctrl.typeObjectsCount == 0 && $ctrl.countObjects != 0 && $ctrl.assign == 'groups'">
+		<div class="layout-column layout-align-center-center w-stretch flex iqs-empty" style="height: calc( 100% - 72px); overflow-x: hidden;">
+			<div class="pip-empty">
+				<img src="images/empty/empty.svg" class="pip-pic">
+				<div class="pip-text" ng-if="$ctrl.types[$ctrl.type].id == 'person'">
+					{{::'SCHEDULE_EMPTY_PEOPLE' | translate}}
+				</div>
+				<div class="pip-text" ng-if="$ctrl.types[$ctrl.type].id == 'equipment'">
+					{{::'SCHEDULE_EMPTY_EQUIPMENT' | translate}}
+				</div>
+				<div class="pip-text" ng-if="$ctrl.types[$ctrl.type].id == 'asset'">
+					{{::'SCHEDULE_EMPTY_ASSET' | translate}}
+				</div>
+				<div class="pip-actions layout-row layout-align-end-center" ng-if="$ctrl.types[$ctrl.type].id == 'person'">
+					<md-button class="color-accent-bg tm12 flex" aria-label="Add" ng-click="$ctrl.updateRoster($ctrl.selectedRoster)"
+					 ng-disabled="$ctrl.transaction.busy() || !$ctrl.accessConfig.addObject">
+						{{::'SCHEDULE_ADD_OBJECT_PEOPLE' | translate}}
+					</md-button>
+				</div>
+				<div class="pip-actions layout-row layout-align-end-center" ng-if="$ctrl.types[$ctrl.type].id == 'equipment'">
+					<md-button class="color-accent-bg tm12 flex" aria-label="Add" ng-click="$ctrl.updateRoster($ctrl.selectedRoster)"
+					 ng-disabled="$ctrl.transaction.busy() || !$ctrl.accessConfig.addObject">
+						{{::'SCHEDULE_ADD_OBJECT_EQUIPMENT' | translate}}
+					</md-button>
+				</div>
+				<div class="pip-actions layout-row layout-align-end-center" ng-if="$ctrl.types[$ctrl.type].id == 'asset'">
+					<md-button class="color-accent-bg tm12 flex" aria-label="Add" ng-click="$ctrl.updateRoster($ctrl.selectedRoster)"
+					 ng-disabled="$ctrl.transaction.busy() || !$ctrl.accessConfig.addObject">
+						{{::'SCHEDULE_ADD_OBJECT_ASSET' | translate}}
+					</md-button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="pip-body p16  layout-column flex" ng-if="$ctrl.selectedRoster && $ctrl.countObjects > 0 && $ctrl.assign == 'groups' && $ctrl.typeObjectsCount > 0">
+		<div class="color-secondary-text m16 lm0 " ng-if="$ctrl.selectedRosterObjectsActual.length > 0">
+			{{ ::'ACTUAL_OBJECTS' | translate }}
+		</div>
+		<div class="pip-ref-list iqs-roster-objects-list tp0">
+			<div class="pip-ref-list-item divider-bottom layout-row layout-align-start-center" ng-repeat="object in $ctrl.selectedRosterObjectsActual track by $index"
+			 ng-if="object.category == $ctrl.types[$ctrl.type].id && object.actual">
+				<!-- ng-if="object.category == $ctrl.types[$ctrl.type].id && object.actual"> -->
+				<div class="pip-pic tm0">
+					<pip-avatar class="pip-face" pip-rebind="true" pip-id="object.id" pip-name="object.name" ng-click="$ctrl.avatarClick(object.id)"></pip-avatar>
+				</div>
+				<div class="pip-content flex">
+					<p class="pip-title text-overflow flex">
+						{{ object.name }}
+					</p>
+					<p class="pip-subtitle text-overflow flex" ng-if="object.objectAssign && object.objectAssign.name">
+						{{ ::'SCHEDULE_WORK' | translate }} {{ object.objectAssign.name }}
+					</p>
+					<p class="pip-subtitle text-overflow" ng-if="!(object.objectAssign && object.objectAssign.name)">
+						{{ object | formatObjectSubtitle }}
+					</p>
+				</div>
+				<div class="flex-fixed">
+					<md-menu md-position-mode="target-right target">
+						<md-button class="md-icon-button" tabindex="3" ng-click="$ctrl.openMenu($mdMenu, $event);" ng-disabled="$ctrl.transaction.busy() || !$ctrl.accessConfig.assignObject"
+						 aria-label="open actions">
+							<md-icon md-svg-icon="icons:vdots"></md-icon>
+						</md-button>
+						<md-menu-content width="3">
+							<!-- Local secondary actions -->
+							<md-menu-item ng-if="object.category == 'person'">
+								<md-button ng-click="$ctrl.assigneObjetClick($ctrl.selectedRoster, object.id, object.assign_id)" ng-disabled="!$ctrl.accessConfig.assignObject">
+									{{ ::"SCHEDULE_ADD_EUEPMENT" | translate }}
+								</md-button>
+							</md-menu-item>
+
+							<md-menu-item ng-if="object.category == 'person' && object.assign_id">
+								<md-button ng-click="$ctrl.deleteAssine($ctrl.selectedRoster, object.id, object.assign_id)" ng-disabled="!$ctrl.accessConfig.assignObject">
+									{{ ::"SCHEDULE_DELETE_EUEPMENT" | translate }}
+								</md-button>
+							</md-menu-item>
+							<md-menu-item>
+								<md-button ng-click="$ctrl.deleteObjetClick($ctrl.selectedRoster, object)" ng-disabled="!$ctrl.accessConfig.addObject">
+									{{ ::"SCHEDULE_DELETE_OBJECT" | translate }}
+								</md-button>
+							</md-menu-item>
+
+						</md-menu-content>
+					</md-menu>
+				</div>
+			</div>
+		</div>
+
+		<div class="color-secondary-text m16 lm0" ng-if="$ctrl.selectedRosterObjectsNotActual.length > 0">
+			{{ ::'PLANED_OBJECTS' | translate }}
+		</div>
+
+		<div class="pip-ref-list iqs-roster-objects-list tp0">
+			<div class="pip-ref-list-item divider-bottom layout-row layout-align-start-center" ng-repeat="object in $ctrl.selectedRosterObjectsNotActual track by $index"
+			 ng-if="object.category == $ctrl.types[$ctrl.type].id">
+				<!-- ng-if="object.category == $ctrl.types[$ctrl.type].id"> -->
+
+				<div class="pip-pic tm0">
+					<pip-avatar class="pip-face" pip-rebind="true" pip-id="object.id" pip-name="object.name" ng-click="$ctrl.avatarClick(object.id)"></pip-avatar>
+				</div>
+				<div class="pip-content">
+					<p class="pip-title text-overflow flex">
+						{{ object.name }}
+					</p>
+					<p class="pip-subtitle text-overflow flex" ng-if="object.objectAssign && object.objectAssign.name">
+						{{ :: 'SCHEDULE_WORK' | translate }} {{ object.objectAssign.name }}
+					</p>
+
+					<p class="pip-subtitle  text-overflow" ng-if="!(object.objectAssign && object.objectAssign.name)">
+						{{ object | formatObjectSubtitle }}
+					</p>
+				</div>
+				<div>
+					<md-menu md-position-mode="target-right target">
+						<md-button class="md-icon-button" tabindex="3" ng-click="$ctrl.openMenu($mdMenu, $event);" ng-disabled="$ctrl.transaction.busy() || !$ctrl.accessConfig.assignObject"
+						 aria-label="open actions">
+							<md-icon md-svg-icon="icons:vdots"></md-icon>
+						</md-button>
+						<md-menu-content width="3">
+							<md-menu-item ng-if="object.category == 'person'">
+								<md-button ng-click="$ctrl.assigneObjetClick($ctrl.selectedRoster, object.id, object.assign_id)" ng-disabled="!$ctrl.accessConfig.assignObject">
+									{{ ::"SCHEDULE_ADD_EUEPMENT" | translate }}
+								</md-button>
+							</md-menu-item>
+							<md-menu-item ng-if="object.category == 'person' && object.assign_id">
+								<md-button ng-click="$ctrl.deleteAssine($ctrl.selectedRoster, object.id, object.assign_id)" ng-disabled="!$ctrl.accessConfig.assignObject">
+									{{ ::"SCHEDULE_DELETE_EUEPMENT" | translate }}
+								</md-button>
+							</md-menu-item>
+							<md-menu-item>
+								<md-button ng-click="$ctrl.deleteObjetClick($ctrl.selectedRoster, object)" ng-disabled="!$ctrl.accessConfig.addObject">
+									{{ ::"SCHEDULE_DELETE_OBJECT" | translate }}
+								</md-button>
+							</md-menu-item>
+						</md-menu-content>
+					</md-menu>
+				</div>
+			</div>
+		</div>
+
+		<div class="pip-blank-item"></div>
+	</div>
+
+	<div class="pip-body p0 layout-column layout-align-center-center flex" ng-if="!$ctrl.selectedRoster || $ctrl.countObjects == 0"
+	 ng-include="'schedule/panels/ScheduleEmpty.html'">
+	</div>
+
+
+	<iqs-schedule-assigne iqs-roster="$ctrl.selectedRoster.roster" iqs-type="$ctrl.typesAssign[$ctrl.typeAssign].id" ng-if="$ctrl.selectedRoster.roster && $ctrl.countObjects > 0 && $ctrl.assign == 'assign'">
+	</iqs-schedule-assigne>
+
+</pip-document>

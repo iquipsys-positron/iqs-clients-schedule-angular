@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="26px" height="33px" viewBox="0 0 26 33" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Incident sign</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M10,26.6666667 C16.6666667,18.9079336 20,13.2462377 20,9.6815788 C20,4.33459047 15.5228475,0 10,0 C4.4771525,0 0,4.33459047 0,9.6815788 C0,13.2462377 3.33333333,18.9079336 10,26.6666667 Z" id="path-1"></path>
+        <filter x="-22.5%" y="-16.9%" width="145.0%" height="133.7%" filterUnits="objectBoundingBox" id="filter-2">
+            <feMorphology radius="0.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="0" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Styleguide" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Map-styleguide" transform="translate(-1339.000000, -752.000000)">
+            <g id="Large-zoom-symbols" transform="translate(1300.000000, 217.000000)">
+                <g id="Signs" transform="translate(42.000000, 538.000000)">
+                    <g id="Incident-sign">
+                        <g id="Oval-6">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                            <use fill="#DF5E56" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        </g>
+                        <circle id="Oval" fill="#FFFFFF" cx="10" cy="10" r="7"></circle>
+                        <path d="M10.7348633,12.0673828 L9.30615234,12.0673828 L9.14892578,5.046875 L10.8989258,5.046875 L10.7348633,12.0673828 Z M9.10107422,14.2138672 C9.10107422,13.9541003 9.18538327,13.7387704 9.35400391,13.5678711 C9.52262454,13.3969718 9.75276547,13.3115234 10.0444336,13.3115234 C10.3361017,13.3115234 10.5662426,13.3969718 10.7348633,13.5678711 C10.9034839,13.7387704 10.987793,13.9541003 10.987793,14.2138672 C10.987793,14.4645195 10.9057625,14.6741528 10.7416992,14.8427734 C10.5776359,15.0113941 10.3452163,15.0957031 10.0444336,15.0957031 C9.74365084,15.0957031 9.51123129,15.0113941 9.34716797,14.8427734 C9.18310465,14.6741528 9.10107422,14.4645195 9.10107422,14.2138672 Z" id="!" fill="#000000"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="26px"
+   height="33px"
+   viewBox="0 0 26 33"
+   version="1.1"
+   id="svg30"
+   sodipodi:docname="Parking_sign1.svg"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)">
+  <metadata
+     id="metadata34">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     id="namedview32"
+     showgrid="false"
+     inkscape:zoom="7.1515152"
+     inkscape:cx="-9.7224575"
+     inkscape:cy="15.311441"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg30" />
+  <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+  <title
+     id="title2">Parking sign</title>
+  <desc
+     id="desc4">Created with Sketch.</desc>
+  <defs
+     id="defs16">
+    <path
+       d="M10,26.6666667 C16.6666667,18.9079336 20,13.2462377 20,9.6815788 C20,4.33459047 15.5228475,0 10,0 C4.4771525,0 0,4.33459047 0,9.6815788 C0,13.2462377 3.33333333,18.9079336 10,26.6666667 Z"
+       id="path-1" />
+    <filter
+       x="-22.5%"
+       y="-16.9%"
+       width="145.0%"
+       height="133.7%"
+       filterUnits="objectBoundingBox"
+       id="filter-2">
+      <feMorphology
+         radius="0.5"
+         operator="dilate"
+         in="SourceAlpha"
+         result="shadowSpreadOuter1"
+         id="feMorphology7" />
+      <feOffset
+         dx="0"
+         dy="0"
+         in="shadowSpreadOuter1"
+         result="shadowOffsetOuter1"
+         id="feOffset9" />
+      <feGaussianBlur
+         stdDeviation="1"
+         in="shadowOffsetOuter1"
+         result="shadowBlurOuter1"
+         id="feGaussianBlur11" />
+      <feColorMatrix
+         values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0"
+         type="matrix"
+         in="shadowBlurOuter1"
+         id="feColorMatrix13" />
+    </filter>
+  </defs>
+  <g
+     id="Styleguide"
+     stroke="none"
+     stroke-width="1"
+     fill="none"
+     fill-rule="evenodd">
+    <g
+       id="Map-styleguide"
+       transform="translate(-1592.000000, -752.000000)">
+      <g
+         id="Large-zoom-symbols"
+         transform="translate(1300.000000, 217.000000)">
+        <g
+           id="Signs"
+           transform="translate(42.000000, 538.000000)">
+          <g
+             id="Parking-sign"
+             transform="translate(253.000000, 0.000000)">
+            <g
+               id="Oval-6">
+              <use
+                 fill="black"
+                 fill-opacity="1"
+                 filter="url(#filter-2)"
+                 xlink:href="#path-1"
+                 id="use18" />
+              <use
+                 fill="#48A7EE"
+                 fill-rule="evenodd"
+                 xlink:href="#path-1"
+                 id="use20"
+                 style="fill:#ab47bc;fill-opacity:1" />
+            </g>
+            <circle
+               id="Oval"
+               fill="#FFFFFF"
+               cx="10"
+               cy="10"
+               r="7" />
+            <path
+               d="M 8.8264119,11.301758 V 15 H 7.0969197 V 5.046875 h 3.8076173 c 1.111985,0 1.994951,0.2893851 2.648926,0.8681641 0.653974,0.5787789 0.980957,1.3443962 0.980957,2.296875 0,0.9752653 -0.320147,1.7340467 -0.96045,2.2763669 -0.640302,0.542321 -1.53694,0.813477 -2.689941,0.813477 z m 0,-1.3876955 h 2.0781251 c 0.615237,0 1.084634,-0.1446926 1.408203,-0.434082 0.323569,-0.2893895 0.485352,-0.7075168 0.485352,-1.2543946 0,-0.5377631 -0.164061,-0.9672835 -0.492188,-1.2885742 C 11.977777,6.6157211 11.52661,6.4505209 10.952388,6.4414062 H 8.8264119 Z"
+               id="P"
+               inkscape:connector-curvature="0"
+               style="fill:#000000" />
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

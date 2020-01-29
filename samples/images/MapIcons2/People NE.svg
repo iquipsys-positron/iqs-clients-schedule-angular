@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+    <title>People NE</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M15,30 C6.716,30 0,23.284 0,15 C0,6.716 6.716,0 15,0 L30,0 L30,15 C30,23.284 23.284,30 15,30 Z" id="path-1"></path>
+        <filter x="-15.0%" y="-15.0%" width="130.0%" height="130.0%" filterUnits="objectBoundingBox" id="filter-2">
+            <feMorphology radius="0.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="0" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.249886775 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Export-symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="People-NE">
+            <g id="Direction" transform="translate(5.000000, 5.000000)">
+                <g id="Outer-circle">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                </g>
+            </g>
+            <g id="People-symbol" transform="translate(5.000000, 5.000000)">
+                <g id="Symbol" transform="translate(3.000000, 3.000000)">
+                    <path d="M12,24 C5.3728,24 0,18.6272 0,12 C0,5.3728 5.3728,0 12,0 C18.6272,0 24,5.3728 24,12 C24,18.6272 18.6272,24 12,24 Z" id="Outer-circle" fill="#8B8B8B"></path>
+                    <g id="Person" transform="translate(8.500000, 4.000000)" fill="#FEFEFE">
+                        <path d="M7,6.22266066 L7,10.158997 C7,10.3339462 6.94047679,10.4760903 6.82142857,10.5854335 C6.65476107,10.738514 6.48809607,10.8150531 6.32142857,10.8150531 L5.60714286,10.8150531 L5.60714286,14.7513895 C5.60714286,14.90447 5.535715,15.0466141 5.39285714,15.1778259 C5.22618964,15.3309064 5.05952464,15.4074455 4.89285714,15.4074455 L2.10714286,15.4074455 C1.94047536,15.4074455 1.77381036,15.3309064 1.60714286,15.1778259 C1.48809464,15.0247454 1.42857143,14.8826013 1.42857143,14.7513895 L1.42857143,10.8150531 L0.75,10.8150531 C0.511903571,10.8150531 0.345238571,10.738514 0.25,10.5854335 C0.0833325,10.4979589 0,10.3558148 0,10.158997 L0,6.22266066 C0,5.87276234 0.142855714,5.5666059 0.428571429,5.30418217 C0.714287143,5.04175843 1.04761714,4.91054853 1.42857143,4.91054853 L5.60714286,4.91054853 C5.9642875,4.91054853 6.28571286,5.04175843 6.57142857,5.30418217 C6.85714429,5.54473726 7,5.85089369 7,6.22266066 Z M5.99481849,2.29619622 C5.99481849,2.88664963 5.75672563,3.42242339 5.28053277,3.90353358 C4.80433992,4.36277512 4.23291706,4.59239244 3.56624706,4.59239244 C2.87576742,4.59239244 2.28053527,4.36277512 1.78053277,3.90353358 C1.32814956,3.44429204 1.10196135,2.90851828 1.10196135,2.29619622 C1.10196135,1.68387417 1.32814956,1.14810041 1.78053277,0.688858866 C2.28053527,0.229617326 2.87576742,0 3.56624706,0 C4.23291706,0 4.80433992,0.229617326 5.28053277,0.688858866 C5.75672563,1.16996905 5.99481849,1.70574281 5.99481849,2.29619622 Z" id="Icon"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,57 @@
+<md-dialog class="pip-dialog layout-column bp0 pip-scroll iqs-add-objects-dialog " style="height: 80%" md-theme="{{$ctrl.theme}}">
+
+	<md-progress-linear md-mode="indeterminate" class="dialog-progress-linear" ng-show="$ctrl.transaction.busy()">
+	</md-progress-linear>
+	<div class="pip-header p16 divider-bottom">
+		<div class="w-stretch">
+
+			<h3 class="m0 bm16 w-stretch">{{ ::$ctrl.dialogTitle | translate }}</h3>
+			<iqs-global-search-panel iqs-search-query="$ctrl.status" iqs-search-callback="$ctrl.onSearchResult(query)" iqs-cancel-callback="$ctrl.onCanselSearch()"
+			 iqs-default-values="$ctrl.defaultCollection" iqs-search-collection="$ctrl.searchedCollection">
+			</iqs-global-search-panel>
+		</div>
+	</div>
+
+	<div class="pip-body lp0 rp0" ng-if="$ctrl.objects.length > 0">
+		<md-list class="pip-ref-list tp0">
+			<md-list-item class="pip-ref-list-item divider-bottom" md-ink-ripple ng-repeat="section in $ctrl.objects track by section.id">
+				<div class="pip-pic tm0">
+					<pip-avatar class="pip-face" pip-rebind="true" pip-id="section.item.id" pip-name="section.item.name"></pip-avatar>
+				</div>
+				<div class="pip-content">
+					<p class="pip-title text-overflow flex">
+						{{ section.item.name }}
+					</p>
+					<p class="pip-subtitle text-overflow flex" ng-if="($ctrl.entityType == 'control_object' || $ctrl.entityType == 'objects_and_groups') && section.object_type == $ctrl.objectType">
+						{{ section.item | formatObjectSubtitle }}
+					</p>
+				</div>
+				<div>
+					<md-checkbox ng-model="section.checked" class="bm0">
+					</md-checkbox>
+				</div>
+			</md-list-item>
+		</md-list>
+	</div>
+
+	<div class="layout-column flex" ng-if="$ctrl.objects.length == 0">
+		<div class="pip-body p0">
+			<div class="layout-column layout-align-center-center flex bb-empty">
+				<div class="pip-empty">
+					<img src="images/empty/empty.svg" class="pip-pic">
+					<div class="pip-text">
+						{{:: 'ADD_OBJECTS_DIALOG_EMPTY'| translate}}
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<div class="pip-footer ">
+		<!-- <md-button ng-click="$ctrl.config()">{{::'CONFIG' | translate}}</md-button> -->
+		<div class="flex"></div>
+		<md-button class="md-accent" ng-click="$ctrl.cancel()">{{::'CANCEL' | translate}}</md-button>
+		<md-button class="md-accent" ng-click="$ctrl.change()">{{::'ADD' | translate}}</md-button>
+	</div>
+</md-dialog>

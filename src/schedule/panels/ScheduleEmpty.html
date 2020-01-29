@@ -1,0 +1,28 @@
+<div class="layout-column layout-align-center-center w-stretch h-stretch  iqs-empty" style="height: calc( 100% - 72px); overflow-x: hidden;">
+	<div class="pip-empty" ng-if="!$ctrl.isPreloaded || $ctrl.transaction.busy()">
+		<img src="images/empty/progress.svg" class="pip-pic">
+		<div class="pip-text">
+			{{:: 'LOADING_ROSTERS' | translate }}
+			<md-progress-linear md-mode="indeterminate" class="tm24"></md-progress-linear>
+		</div>
+	</div>
+	<div class="pip-empty" 
+		ng-if="!$ctrl.transaction.busy() && $ctrl.isPreloaded && ( !$ctrl.selectedRoster || $ctrl.countObjects == 0)">
+		<img src="images/empty/empty.svg" class="pip-pic">
+		<div class="pip-text">
+			{{::'SCHEDULE_EMPTY' | translate}}
+		</div>
+		<div class="pip-actions layout-row layout-align-end-center" ng-if="!$ctrl.selectedRoster.roster">
+			<md-button class="color-accent-bg tm12 flex" aria-label="Add" ng-click="$ctrl.addRoster()" 
+				ng-disabled="$ctrl.transaction.busy() || !$ctrl.accessConfig.addObject">
+				{{::'ADD_OBJECT' | translate}}
+			</md-button>
+		</div>
+		<div class="pip-actions layout-row layout-align-end-center" ng-if="$ctrl.countObjects == 0 && $ctrl.selectedRoster.roster">
+			<md-button class="color-accent-bg tm12 flex" aria-label="Add" ng-click="$ctrl.updateRoster($ctrl.selectedRoster)" 
+				ng-disabled="$ctrl.transaction.busy() || !$ctrl.accessConfig.addObject">
+				{{::'UPDATE_OBJECT' | translate}}
+			</md-button>
+		</div>
+	</div>
+</div>

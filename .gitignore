@@ -1,0 +1,10 @@
+/.idea
+/.vscode
+/node_modules
+/bower_components
+/build
+/temp
+/lib
+/dist
+debug.log
+build.secret.js

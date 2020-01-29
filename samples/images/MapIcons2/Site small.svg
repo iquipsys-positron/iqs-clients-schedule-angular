@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.1 (43504) - http://www.bohemiancoding.com/sketch -->
+    <title>Organization small</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M21,34 C14.3600532,28.4362845 10,22.2989899 10,16 C10,10.7010101 14.7010101,6 21,6 C26.2989899,6 31,10.7010101 31,16 C31,22.2989899 26.8284336,28.3393978 21,34 Z M20.5,22 C23.5375661,22 26,19.5375661 26,16.5 C26,13.4624339 23.5375661,11 20.5,11 C17.4624339,11 15,13.4624339 15,16.5 C15,19.5375661 17.4624339,22 20.5,22 Z" id="path-1"></path>
+        <filter x="-14.3%" y="-10.7%" width="128.6%" height="121.4%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Export-symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Organization-small">
+            <g id="Combined-Shape">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use fill="#8B8B8B" fill-rule="evenodd" xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>
