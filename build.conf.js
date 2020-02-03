@@ -21,7 +21,7 @@ module.exports = {
             '../node_modules/pip-webui-all/dist/**/*',
             '../node_modules/pip-suite-all/dist/**/*',
             '../node_modules/pip-admin-system/dist/**/*',
-            '../iqs-clients-shell2/dist/**/*',
+            '../iqs-libs-clientshell2-angular/dist/**/*',
             '../iqs-clients-unsupported-page/**/*'
         ]
     },

@@ -11,5 +11,5 @@
 /// <reference path="moment/moment-tz.d.ts" />
 /// <reference path="node/node.d.ts" />
 
-/// <reference path="../../iqs-clients-shell2/dist/iqs-client-shell.d.ts" />
+/// <reference path="../../iqs-libs-clientshell2-angular/dist/iqs-libs-clientshell2-angular.d.ts" />
 /// <reference path="../../node_modules/pip-admin-system/dist/pip-admin-system.d.ts" />
