@@ -22,7 +22,8 @@ module.exports = {
             '../node_modules/pip-suite-all/dist/**/*',
             '../node_modules/pip-admin-system/dist/**/*',
             '../iqs-libs-clientshell-angular/dist/**/*',
-            '../iqs-libs-unsupported-angular/**/*'
+            '../iqs-libs-unsupported-angular/**/*',
+            './src/config.js'
         ]
     },
     samples: {
