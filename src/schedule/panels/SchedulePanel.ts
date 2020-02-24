@@ -225,7 +225,7 @@ class SchedulePanelController implements ng.IController {
     }
 
     public get isLoaded(): boolean {
-        return this.isPreloaded && this.sections && this.sections.length > 0 && this.shifts && this.shifts.length > 0;
+        return this.isPreloaded && this.sections && this.sections.length > 0 && !!this.shifts;
     }
 
     public get transaction(): pip.services.Transaction {
